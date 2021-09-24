@@ -97,3 +97,44 @@ let updateClickCount =(function myFunc() {
 })(); 
 
 element.addEventListener("click",updateClickCount);
+
+
+
+
+
+// Example - 6
+
+function complexCounter() {
+    let count = 0;
+
+    return {
+        incr : function() { return ++count },
+        decr : function() { return --count },
+        val : function() { return count },
+        reset : function() { count = 0; }
+    }
+}
+
+let ctr1 = complexCounter();
+ctr1.incr();
+ctr1.incr();
+console.log(`counter 1 value is ${ctr1.val()}`);
+
+let ctr2 = complexCounter();
+ctr2.incr();
+ctr2.incr();
+ctr2.incr();
+ctr2.incr();
+ctr2.decr();
+ctr2.decr();
+ctr2.decr();
+ctr2.decr();
+ctr2.decr();
+ctr2.decr();
+ctr2.decr();
+
+console.log(`counter 2 value is ${ctr2.val()}`);
+ctr2.reset();
+console.log(`counter 2 value After reset is ${ctr2.val()}`);
+
+
