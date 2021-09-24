@@ -94,6 +94,6 @@ let updateClickCount =(function myFunc() {
         ++count;
         document.getElementById("countVal").innerHTML = count;
     }
-})();
+})(); 
 
 element.addEventListener("click",updateClickCount);
