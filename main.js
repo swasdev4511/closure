@@ -82,3 +82,18 @@ let preResult = a(" $");
 let midResult = preResult();
 let finalResult = midResult();
 console.log(finalResult());
+
+
+// Example -5
+
+const element = document.getElementById("my-btn");
+
+let updateClickCount =(function myFunc() {
+    let count = 0;
+    return function() {
+        ++count;
+        document.getElementById("countVal").innerHTML = count;
+    }
+})();
+
+element.addEventListener("click",updateClickCount);
