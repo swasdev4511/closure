@@ -11,9 +11,9 @@ let timer = stopWatch(); // here, ideally stopwatch function and its variables a
                          // getElapsedtime forms a closure and the references of variables in its lexical environment are 
                          // being remembered
 
-for(let k =0; k < 10000000;k++) {
-    var test = Math.random * 1000;
-}
+// for(let k =0; k < 10000000;k++) {
+//     var test = Math.random * 1000;
+// }
 timer();
 
 
@@ -28,3 +28,57 @@ let adder2 = createAdder(100);
 
 console.log(adder1(10));
 console.log(adder2(50));
+
+
+// Example - 3 
+
+function getSalaryByDepartment(department) {
+    return function getPosition(position) {
+        const appendStr = "L per Annum";
+        if(department === "IT") {
+            switch(position) {
+                case "manager" : 
+                    return 12.5+appendStr;
+                case "developer" :
+                    return 8.5+appendStr;
+                case "tester" :
+                    return 4.5+appendStr;
+                default :
+                    return 2.5+appendStr;
+            }
+        } else {
+            return "Non-IT department!";
+        }
+        
+    }
+}
+
+let department1 = getSalaryByDepartment("IT");
+console.log(department1("manager"));
+
+let department2 = getSalaryByDepartment("Sales");
+console.log(department2("tester"));
+
+let department3 = getSalaryByDepartment("IT");
+console.log(department3("network engineer"));
+
+
+// Example - 4
+
+function a(para) {
+    var i = 1;
+    return function b() {
+        var j = 10;
+            return function c() {
+                var k = 100;
+                return function d() {
+                    return i+j+k+para;
+                }
+            }
+    }
+}
+
+let preResult = a(" $");
+let midResult = preResult();
+let finalResult = midResult();
+console.log(finalResult());
