@@ -15,7 +15,7 @@ let timer = stopWatch(); // here, ideally stopwatch function and its variables a
 //     var test = Math.random * 1000;
 // }
 timer();
-
+console.log("=============================================Example - 1===========================================");
 
 // Example - 2 : create Adder - a factory function
 function createAdder(y) {
@@ -28,7 +28,7 @@ let adder2 = createAdder(100);
 
 console.log(adder1(10));
 console.log(adder2(50));
-
+console.log("============================================Example - 2============================================");
 
 // Example - 3 
 
@@ -61,6 +61,8 @@ console.log(department2("tester"));
 
 let department3 = getSalaryByDepartment("IT");
 console.log(department3("network engineer"));
+console.log("=======================================Example - 3============================================");
+
 
 
 // Example - 4
@@ -82,6 +84,9 @@ let preResult = a(" $");
 let midResult = preResult();
 let finalResult = midResult();
 console.log(finalResult());
+console.log("=======================================Example - 4=========================================");
+
+
 
 
 // Example -5
@@ -97,7 +102,7 @@ let updateClickCount =(function myFunc() {
 })(); 
 
 element.addEventListener("click",updateClickCount);
-
+console.log("========================================Example - 5===========================================");
 
 
 
@@ -136,5 +141,5 @@ ctr2.decr();
 console.log(`counter 2 value is ${ctr2.val()}`);
 ctr2.reset();
 console.log(`counter 2 value After reset is ${ctr2.val()}`);
-
+console.log("=======================================Example - 6=================================================");
 
